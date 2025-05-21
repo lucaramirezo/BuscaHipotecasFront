@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink } from 'vue-router';
-import { ref } from 'vue'; // Assuming authStore will be used later
+import { ref } from 'vue'; // Removed unused computed import
+import BaseButton from '@/components/common/BaseButton.vue'; // Import BaseButton
 // import { useAuthStore } from '@/store/authStore'; // Example for later
 
 // const authStore = useAuthStore(); // Example for later
@@ -8,9 +9,7 @@ const isLoggedIn = ref(false); // Placeholder for auth state
 const userCredits = ref(12); // Placeholder for user credits
 const userInitials = ref('JD'); // Placeholder for user initials
 
-const navigateToLogin = () => {
-  // router.push('/login'); // Handled by RouterLink
-};
+
 </script>
 
 <template>
@@ -48,12 +47,19 @@ const navigateToLogin = () => {
              <BaseButton variant="outline-secondary" size="sm" @click="isLoggedIn = false">Salir</BaseButton> <!-- Placeholder logout -->
           </template>
           <template v-else>
-            <RouterLink to="/login" custom v-slot="{ navigate }">
-              <BaseButton variant="outline-primary" @click="navigate" class="me-2">Iniciar Sesión</BaseButton>
-            </RouterLink>
-            <RouterLink to="/registro" custom v-slot="{ navigate }"> <!-- TODO: Create RegistroPage -->
-              <BaseButton variant="primary" @click="navigate">Registrarse</BaseButton>
-            </RouterLink>
+            <div class="w-100 d-lg-flex align-items-lg-center">
+              <!-- Login Link/Button -->
+              <RouterLink to="/login" custom v-slot="{ navigate, href }">
+                <a :href="href" @click="navigate" class="nav-link d-block d-lg-none text-center py-1">Iniciar Sesión</a>
+                <a :href="href" @click="navigate" class="btn btn-outline-primary btn-sm d-none d-lg-inline-block me-lg-2" role="button">Iniciar Sesión</a>
+              </RouterLink>
+              
+              <!-- Register Link/Button -->
+              <RouterLink to="/registro" custom v-slot="{ navigate, href }">
+                <a :href="href" @click="navigate" class="nav-link d-block d-lg-none text-center py-1">Registrarse</a>
+                <a :href="href" @click="navigate" class="btn btn-primary btn-sm d-none d-lg-inline-block" role="button">Registrarse</a>
+              </RouterLink>
+            </div>
           </template>
         </div>
       </div>
@@ -74,5 +80,6 @@ const navigateToLogin = () => {
 .navbar {
   border-bottom: 1px solid #dee2e6;
 }
-/* Add any component-specific styles here */
+/* Ensure Bootstrap Icons are available globally or import them here */
+/* @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"); */
 </style>

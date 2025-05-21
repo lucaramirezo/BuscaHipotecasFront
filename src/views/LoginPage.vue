@@ -14,31 +14,39 @@ const handleLogin = () => {
 </script>
 
 <template>
-  <div class="container mt-5">
+  <div class="container mt-5 mb-5"> <!-- Added mb-5 for spacing below -->
     <div class="row justify-content-center">
       <div class="col-md-6 col-lg-4">
-        <div class="card">
-          <div class="card-body">
+        <div class="card shadow-sm"> <!-- Added shadow-sm -->
+          <div class="card-body p-4"> <!-- Added more padding -->
             <h2 class="card-title text-center mb-4">Iniciar Sesión</h2>
             <form @submit.prevent="handleLogin">
-              <BaseInput
-                v-model="email"
-                label="Correo Electrónico"
-                type="email"
-                placeholder="tu@email.com"
-                required
-              />
-              <BaseInput
-                v-model="password"
-                label="Contraseña"
-                type="password"
-                placeholder="Tu contraseña"
-                required
-              />
-              <BaseButton type="submit" variant="primary" class="w-100 mt-3">Entrar</BaseButton>
+              <div class="mb-3">
+                <BaseInput
+                  v-model="email"
+                  label="Correo Electrónico"
+                  type="email"
+                  id="loginEmail"
+                  placeholder="tu@email.com"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <BaseInput
+                  v-model="password"
+                  label="Contraseña"
+                  type="password"
+                  id="loginPassword"
+                  placeholder="Tu contraseña"
+                  required
+                />
+              </div>
+              <div class="d-grid gap-2">
+                <BaseButton type="submit" variant="primary" size="lg">Entrar</BaseButton>
+              </div>
             </form>
-            <p class="mt-3 text-center">
-              ¿No tienes cuenta? <router-link to="/registro">Regístrate aquí</router-link> <!-- Assuming a /registro route -->
+            <p class="mt-4 text-center"> <!-- Increased top margin -->
+              ¿No tienes cuenta? <router-link to="/registro">Regístrate aquí</router-link>
             </p>
           </div>
         </div>
@@ -49,6 +57,6 @@ const handleLogin = () => {
 
 <style scoped>
 .card {
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  /* box-shadow: 0 4px 8px rgba(0,0,0,0.1); // Replaced by Bootstrap shadow-sm */
 }
 </style>
