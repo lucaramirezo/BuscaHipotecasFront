@@ -7,18 +7,69 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
 
-# Editor directories and files
+# Dependency directories
+node_modules/
+
+# Build outputs
+dist/
+dist-ssr/
+out/
+build/
+
+# Vite
+.vite/
+
+# Optional cache
+.cache/
+.next/
+.nuxt/
+.svelte-kit/
+coverage/
+*.lcov
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.* 
+!.env.example
+
+# Editor settings
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
+.idea/
+.eclipse/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Misc
+*.local
+*.bak
+*.tmp
+*.swp
+*.orig
+*.rej
+
+# Test snapshots
+__snapshots__/
+
+# TypeScript
+*.tsbuildinfo
+
+# Python virtual environment
+.venv/
+venv/
+*.pyc
+__pycache__/
+.pytest_cache/

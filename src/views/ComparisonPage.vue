@@ -10,8 +10,58 @@ import { ref } from 'vue'; // Added import for ref
 
 // Mock data until store is connected
 const mockComparisonList = ref([
-  { id: '1', bankName: 'Banco Sol', mortgageName: 'Hipoteca Sol Joven', interestRate: '2.8%', monthlyPayment: '680€', openingFee: '0%', bankLogoUrl: 'https://via.placeholder.com/80x40?text=Sol' },
-  { id: '2', bankName: 'Banco Luna', mortgageName: 'Hipoteca Luna Fija', interestRate: '3.1%', monthlyPayment: '710€', openingFee: '0.5%', bankLogoUrl: 'https://via.placeholder.com/80x40?text=Luna' },
+  { 
+    id: '1', 
+    bankName: 'Banco Santander', 
+    mortgageName: 'Hipoteca Fija Santander', 
+    interestRate: '3.05% TIN', 
+    apr: '3.55% TAE', 
+    termYears: 25, 
+    maxAmount: 200000,
+    monthlyPayment: '850€', 
+    openingFee: '0%', 
+    otherFees: 'Seguro de vida y hogar requeridos',
+    bankLogoUrl: '/banks/Banco_Santander_Logotipo.svg.png' 
+  },
+  { 
+    id: '2', 
+    bankName: 'BBVA', 
+    mortgageName: 'Hipoteca Fija BBVA', 
+    interestRate: '2.90% TIN', 
+    apr: '3.40% TAE',
+    termYears: 30,
+    maxAmount: 250000,
+    monthlyPayment: '780€', 
+    openingFee: '0.25%', 
+    otherFees: 'Seguro de hogar requerido, nómina domiciliada',
+    bankLogoUrl: '/banks/BBVA_2019.svg.png' 
+  },
+  { 
+    id: '3', 
+    bankName: 'CaixaBank', 
+    mortgageName: 'CasaFácil Fijo', 
+    interestRate: '3.15% TIN',
+    apr: '3.65% TAE',
+    termYears: 20,
+    maxAmount: 180000,
+    monthlyPayment: '950€', 
+    openingFee: '150€', 
+    otherFees: 'Seguro de vida, seguro de hogar, domiciliación de nómina',
+    bankLogoUrl: '/banks/Logo_CaixaBank.svg.png' 
+  },
+   { 
+    id: '4', 
+    bankName: 'ING', 
+    mortgageName: 'Hipoteca Naranja Fija', 
+    interestRate: '2.99% TIN',
+    apr: '3.30% TAE',
+    termYears: 25,
+    maxAmount: 300000,
+    monthlyPayment: '820€', 
+    openingFee: '0€', 
+    otherFees: 'Seguro de hogar y vida opcionales con bonificación',
+    bankLogoUrl: '/banks/ING_Group_N.V._Logo.svg.png' 
+  }
 ]);
 const mortgagesToCompare = ref(mockComparisonList); // Replace with store data later
 

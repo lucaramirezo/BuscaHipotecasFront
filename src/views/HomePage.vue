@@ -4,14 +4,13 @@ import { useRouter } from 'vue-router';
 
 const router = useRouter();
 
-// Placeholder data - replace with actual bank logos or a more dynamic solution
 const bankLogos = [
-  'https://via.placeholder.com/120x60?text=Banco+Santander',
-  'https://via.placeholder.com/120x60?text=BBVA',
-  'https://via.placeholder.com/120x60?text=CaixaBank',
-  'https://via.placeholder.com/120x60?text=Bankinter',
-  'https://via.placeholder.com/120x60?text=ING',
-  'https://via.placeholder.com/120x60?text=Sabadell',
+  '/banks/Banco_Santander_Logotipo.svg.png',
+  '/banks/BBVA_2019.svg.png',
+  '/banks/Logo_CaixaBank.svg.png',
+  '/banks/Bankinter.svg.png',
+  '/banks/ING_Group_N.V._Logo.svg.png',
+  '/banks/BSabadell_Logo.svg.png',
 ];
 
 const navigateToSearch = () => {

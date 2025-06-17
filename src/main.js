@@ -6,7 +6,7 @@ import router from './router'
 
 // Import Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.min.css'
-// Optionally import Bootstrap JS bundle if you need dropdowns, modals, etc.
+// Import Bootstrap JS bundle if you need dropdowns, modals, etc.
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
 
